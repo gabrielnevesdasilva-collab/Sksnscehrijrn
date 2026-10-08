@@ -1,0 +1,58 @@
+-- Dough Hub
+-- Interface para uso em sua própria experiência
+
+local Rayfield = loadstring(game:HttpGet(
+    "https://sirius.menu/rayfield"
+))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Dough Hub",
+    LoadingTitle = "Dough Hub",
+    LoadingSubtitle = "Tycoon Ninja",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "DoughHub",
+        FileName = "Settings"
+    },
+    Discord = {
+        Enabled = false
+    },
+    KeySystem = false
+})
+
+local MainTab = Window:CreateTab("🏠 Main", 4483362458)
+
+MainTab:CreateSection("Dough Hub")
+
+MainTab:CreateParagraph({
+    Title = "Bem-vindo!",
+    Content = "Dough Hub carregado com sucesso."
+})
+
+MainTab:CreateButton({
+    Name = "Mensagem",
+    Callback = function()
+        Rayfield:Notify({
+            Title = "Dough Hub",
+            Content = "Interface funcionando!",
+            Duration = 3
+        })
+    end
+})
+
+local SettingsTab = Window:CreateTab("⚙️ Settings", 4483362458)
+
+SettingsTab:CreateToggle({
+    Name = "Exemplo de Toggle",
+    CurrentValue = false,
+    Flag = "ExampleToggle",
+    Callback = function(Value)
+        print("Toggle:", Value)
+    end
+})
+
+Rayfield:Notify({
+    Title = "Dough Hub",
+    Content = "Interface iniciada!",
+    Duration = 4
+})
